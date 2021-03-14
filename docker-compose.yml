@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  robot:
+    container_name: robot
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: macd-trade
+    ports:
+    - 3000:3000
+    volumes:
+    - ./src:/app/src
+    env_file:
+      - .env
